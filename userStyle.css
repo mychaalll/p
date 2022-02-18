@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+section{
+    position:relative;
+    width:100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    background: url(images/bg.png)no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header{
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo{
+    position: relative;
+    color:#000;
+    font-size: 25px;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+header .navigation a{
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+    transition-property: background;
+}
+
+header .navigation a:not(:last-child){
+    margin-right: 30px;
+}
+
+header .navigation a:hover{
+    background: #FFF;
+    text-decoration: underline;
+}
+
+.content{
+    max-width: 1020px;
+    margin: 60px 100px;
+}
+
+.content .info h2{
+    color: darkred;
+    font-size: 55px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 60px;
+    margin-bottom: 30px;
+}
+
+.content .info h2 span{
+    color: #fff;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.content .info p{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    max-width: 400px;
+}
+
+.content .info-btn{
+    color: #fff;
+    background: red;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: 0.3s;
+    transition-property: background;
+}
+
+.content .info-btn:hover{
+    background: darkred;
+}
+
+.login{
+    height: 350px;
+    width: 300px;
+    background-color: rgba(56, 56, 56, 0.9);
+    color: #fff;
+    position:block;
+    border-radius: 10px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    margin-left: 50px;
+    padding: 30px 30px;
+}
+h1{
+    margin: 0;
+    padding:0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.login p{
+    margin: 0 ;
+    padding: 0;
+    font-weight: bold;
+}
+.login input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login input[type = "text"], input[type = "password"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.login input[type = "submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: red;
+    font-size: 18px;
+    color: white;
+    border-radius: 20px;
+}
+.login input[type = "submit"]:hover{
+    cursor: pointer;
+    background: darkred;
+}
+
+.login a{
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 20px;
+    color: darkgrey;
+    text-align: center;
+}
+.login a:hover{
+    color: white;
+}
+
+.media-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.media-icons a{
+    position: relative;
+    color:#111;
+    font-size: 25px;
+    transition: 0.3s;
+    transition-property: background;
+}
+
+.media-icons a:not(:last-child){
+    margin-right:  60px;
+}
+
+.media-icons a:hover{
+    transform: scale(1.5);
+}
+
+label{
+    display:none;
+}
+
+#check{
+    z-index: 3;
+    display: none;
+}
