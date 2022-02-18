@@ -122,15 +122,12 @@
                                 <tr>
                                     <th width = "30%">Name</th>
                                     <th width = "15%">Blood Type Needed</th>
-                                    <th width = "15%">Full Address</th>
-                                    <th width = "25%">City</th>
-                                    <th width = "15%">Region</th>
-                                    <th width = "15%">Contact Details</th>
-                                    <th width = "15%">Comments</th>
+                                    <th width = "15%">Location</th>
+                                    <th width = "15%"> </th>
                                 </tr>
                                 <!-- table data -->
                                 <?php
-                                $query = "SELECT ID,FirstName,MiddleName,LastName,BloodType,FullAddress,City,Region,ContactDetails,Comments FROM donortable where CreatorID = '$userID' ";
+                                $query = "SELECT ID,FirstName,MiddleName,LastName,BloodNeeded,FullAddress,City,Region,ContactDetails,Comments FROM donortable where CreatorID = '$userID' ";
                                 $result = mysqli_query($con, $query);
                         
                                 //populate data from database
@@ -140,7 +137,7 @@
                                     {
                                         echo "<tr>";
                                         echo "<td>" . $row['FirstName'] . " " . $row['MiddleName'] . " " . $row['LastName'] . "</td>";
-                                        echo "<td>" . $row['BloodType'] . "</td>";
+                                        echo "<td>" . $row['BloodNeeded'] . "</td>";
                                         echo "<td>" . $row['FullAddress'] . "</td>";
                                         echo "<td>" . $row['City'] . "</td>";
                                         echo "<td>" . $row['Region'] . "</td>";
@@ -173,16 +170,13 @@
                         <tr>
                             <th width = "30%">Name</th>
                             <th width = "15%">Blood Type</th>
-                            <th width = "15%">Full Address</th>
-                            <th width = "25%">City</th>
-                            <th width = "15%">Region</th>
-                            <th width = "15%">Contact Details</th>
-                            <th width = "15%">Comments</th>
+                            <th width = "15%">Location</th>
+                            <th width = "15%"> </th>
                         </tr>
                         <!-- table data -->
                         <?php
                         
-                        $query = "SELECT FirstName,MiddleName,LastName,BloodType,FullAddress,City,Region,ContactDetails,Comments FROM donortable ";
+                        $query = "SELECT ID,FirstName,MiddleName,LastName,BloodType,FullAddress,City,Region,ContactDetails,Comments FROM donortable ";
                         $result = mysqli_query($con, $query);
                         
                         //populate data from database
@@ -190,8 +184,16 @@
                         {
                             while ($row = mysqli_fetch_assoc($result))
                             {
-                                echo "<tr><td>" . $row['FirstName'] . " " . $row['MiddleName'] . " " . $row['LastName'] . "</td><td>" . $row['BloodType'] . "</td><td>" . $row['FullAddress'] . "</td><td>" . $row['City'] . "</td><td>" . $row['Region'] . "</td><td>" . $row['ContactDetails'] . "</td><td>" . $row['Comments'] . "</td></tr>";
-
+                                echo "<tr>";
+                                echo "<td>" . $row['FirstName'] . " " . $row['MiddleName'] . " " . $row['LastName'] . "</td>";
+                                echo "<td>" . $row['BloodType'] . "</td>";
+                                echo "<td>" . $row['City'] . ", " . $row['Region'] . "</td>";
+                                echo "<td>";
+                                echo "<div class = 'table-buttons'>";
+                                echo "<a class = 'table-see-details' href = './editBloodDonor.php?id= " .$row['ID'] ."'>See Details</a>";
+                                echo "</div>";
+                                echo "</td";
+                                echo "</tr>";
                             }
                         }
                         else
@@ -210,16 +212,13 @@
                         <tr>
                             <th width = "10%">Name</th>
                             <th width = "15%">Blood Type Needed</th>
-                            <th width = "15%">Full Address</th>
-                            <th width = "25%">City</th>
-                            <th width = "15%">Region</th>
-                            <th width = "15%">Contact Details</th>
-                            <th width = "15%">Comments</th>
+                            <th width = "15%">Location</th>
+                            <th width = "25%"> </th>
                         </tr>
                         <!-- table data -->
                         <?php
                         
-                        $query = "SELECT FirstName,MiddleName,LastName,BloodNeeded,FullAddress,City,Region,ContactDetails,Comments FROM needertable ";
+                        $query = "SELECT ID,FirstName,MiddleName,LastName,BloodNeeded,FullAddress,City,Region,ContactDetails,Comments FROM needertable ";
                         $result = mysqli_query($con, $query);
                         
                         
@@ -227,8 +226,16 @@
                         {
                             while ($row = mysqli_fetch_assoc($result))
                             {
-                                echo "<tr><td>" . $row['FirstName'] . " " . $row['MiddleName'] . " " . $row['LastName'] . "</td><td>" . $row['BloodNeeded'] . "</td><td>" . $row['FullAddress'] . "</td><td>" . $row['City'] . "</td><td>" . $row['Region'] . "</td><td>" . $row['ContactDetails'] . "</td><td>" . $row['Comments'] . "</td></tr>";
-
+                                echo "<tr>";
+                                echo "<td>" . $row['FirstName'] . " " . $row['MiddleName'] . " " . $row['LastName'] . "</td>";
+                                echo "<td>" . $row['BloodNeeded'] . "</td>";
+                                echo "<td>" . $row['City'] . ", " . $row['Region'] . "</td>";
+                                echo "<td>";
+                                echo "<div class = 'table-buttons'>";
+                                echo "<a class = 'table-see-details' href = './editBloodDonor.php?id= " .$row['ID'] ."'>See Details</a>";
+                                echo "</div>";
+                                echo "</td";
+                                echo "</tr>";
                             }
                         }
                         else
